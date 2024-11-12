@@ -5,8 +5,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
-SRCS = main.cpp Serializer.cpp Data.cpp
-HEADERS = include/Serializer.hpp include/Data.hpp
+SRCS = main.cpp Base.cpp A.cpp B.cpp C.cpp
+HEADERS = include/Base.hpp include/A.hpp include/B.hpp include/C.hpp
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
 .SILENT:

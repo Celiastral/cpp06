@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:30:19 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 18:32:23 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:45:25 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void	convert_double(std::string str)
 	else
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 
+	//check if float is in scientific writing, to avoid puting .0 after a power of 10 or in case of inff/nanf
 	if (is_scientific(f))
 		std::cout << "float: " << f << "f" << std::endl;
 	else
