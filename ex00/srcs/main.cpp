@@ -6,13 +6,14 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:33:12 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/11 17:55:06 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:04:35 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-int	main()
+int	main(int argc, char **argv)
 {
-	std::cout << "oui";
+	if (argc > 1)
+		ScalarConverter::convert(argv[1]);
 }

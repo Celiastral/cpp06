@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:29:22 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/11 18:25:44 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 16:02:27 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <stdlib.h>
+#include <cerrno>
+#include <sstream>
+#include <limits>
+
+typedef enum e_type
+{
+	UNDEFINED = -1,
+	CHAR = 0,
+	INT = 1,
+	FLOAT = 2,
+	DOUBLE = 3
+}	t_type;
 
 class ScalarConverter
 {
