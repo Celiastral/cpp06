@@ -1,12 +1,12 @@
-NAME = convert
+NAME = serializer
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
-SRCS = main.cpp ScalarConverter.cpp convert_type.cpp utils.cpp
-HEADERS = include/ScalarConverter.hpp
+SRCS = main.cpp
+HEADERS = include/Serializer.hpp
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
 .SILENT:
@@ -17,10 +17,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de convert ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de convert ...${NC}"
+	@echo -n "$(Red)Compilation de serializer ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de serializer ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de convert finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de serializer finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile $(HEADERS)
 	$(C++) $(CPPFLAGS) -c $< -o $@

@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:29:22 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 16:02:27 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 17:33:46 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,15 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include <cerrno>
 #include <sstream>
+#include <cerrno>
 #include <limits>
-
-typedef enum e_type
-{
-	UNDEFINED = -1,
-	CHAR = 0,
-	INT = 1,
-	FLOAT = 2,
-	DOUBLE = 3
-}	t_type;
 
 class ScalarConverter
 {
 	public :
+
+		//=== Converter ===
 
 		static void convert(std::string str);
 
@@ -45,5 +38,31 @@ class ScalarConverter
 		ScalarConverter				&operator=(const ScalarConverter &other_ScalarConverter);
 	
 };
+
+//=== Detect type ===
+
+typedef enum e_type
+{
+	UNDEFINED = -1,
+	CHAR = 0,
+	INT = 1,
+	FLOAT = 2,
+	DOUBLE = 3
+}	t_type;
+
+t_type	detect_type(std::string str);
+
+//=== Convert by type ===
+
+void	convert_char(std::string str);
+void	convert_int(std::string str);
+void	convert_float(std::string str);
+void	convert_double(std::string str);
+
+//=== Utils ===
+
+bool	is_scientific(double d);
+bool	is_pseudo_literal_float(std::string str);
+bool	is_pseudo_literal_double(std::string str);
 
 #endif
