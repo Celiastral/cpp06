@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   D.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 20:50:40 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 21:00:47 by eandre           ###   ########.fr       */
+/*   Created: 2024/11/12 21:39:32 by eandre            #+#    #+#             */
+/*   Updated: 2024/11/12 21:39:52 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef B_HPP
-#define B_HPP
+#include "../include/D.hpp"
 
-#include "Base.hpp"
 
-class B: public Base
+//=== Constructor and Destructor ===
+
+
+D::D()
 {
-	public :
+}
 
-		//=== Constructor and Destructor ===
-		
-		B();
-		~B();
-		
-};
-
-#endif
+D::~D()
+{
+}

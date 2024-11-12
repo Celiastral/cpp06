@@ -1,12 +1,12 @@
-NAME = serializer
+NAME = check_base
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
-SRCS = main.cpp Base.cpp A.cpp B.cpp C.cpp
-HEADERS = include/Base.hpp include/A.hpp include/B.hpp include/C.hpp
+SRCS = main.cpp Base.cpp A.cpp B.cpp C.cpp D.cpp
+HEADERS = include/Base.hpp include/A.hpp include/B.hpp include/C.hpp include/D.hpp
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
 .SILENT:
@@ -17,10 +17,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de serializer ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de serializer ...${NC}"
+	@echo -n "$(Red)Compilation de check_base ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de check_base ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de serializer finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de check_base finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile $(HEADERS)
 	$(C++) $(CPPFLAGS) -c $< -o $@

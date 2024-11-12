@@ -6,7 +6,20 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 20:50:48 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 20:50:49 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 21:34:04 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/A.hpp"
+
+
+//=== Constructor and Destructor ===
+
+
+A::A()
+{
+}
+
+A::~A()
+{
+}
