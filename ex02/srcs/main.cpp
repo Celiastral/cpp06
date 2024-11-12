@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 20:49:25 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 21:48:35 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/12 21:53:02 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,41 @@
 #include "../include/B.hpp"
 #include "../include/C.hpp"
 #include "../include/D.hpp"
+
 #include <cstdlib>
+
+Base *generate();
+void identify(Base *p);
+void identify(Base &p);
+
+int	main(int argc, char **argv)
+{
+	D		d;
+
+	srand(time(NULL));
+	std::cout << "\033[0;32m#### NOT NORMAL BASE ####\033[0m" << std::endl;
+	identify(&d);
+	identify(d);
+
+	if (argc > 1)
+	{
+		for (int i = 0; i < std::atoi(argv[1]); i++)
+		{
+			Base	*base;
+	
+			base = generate();
+			std::cout << "Identify pointer: ";
+			identify(base);
+			std::cout << "Identify reference: ";
+			identify(*base);
+			delete base;
+		}
+	}
+}
+
+
+//=== Generate ===
+
 
 //Generate A, B or C with rand
 Base *generate()
@@ -42,6 +76,10 @@ Base *generate()
 		}
 	}
 }
+
+
+//=== identify ===
+
 
 //Identify A, B or C on base pointer
 void identify(Base *p)
@@ -91,30 +129,5 @@ void identify(Base &p)
 	catch(const std::exception& e)
 	{
 		std::cout << "\033[0;31mError! This is not a normal base!\033[0m" << std::endl;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	D		d;
-
-	srand(time(NULL));
-	std::cout << "\033[0;32m#### NOT NORMAL BASE ####\033[0m" << std::endl;
-	identify(&d);
-	identify(d);
-
-	if (argc > 1)
-	{
-		for (int i = 0; i < std::atoi(argv[1]); i++)
-		{
-			Base	*base;
-	
-			base = generate();
-			std::cout << "Identify pointer: ";
-			identify(base);
-			std::cout << "Identify reference: ";
-			identify(*base);
-			delete base;
-		}
 	}
 }
