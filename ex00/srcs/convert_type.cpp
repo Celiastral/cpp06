@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:30:19 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/13 09:14:27 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/13 09:18:47 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	convert_int(std::string str)
 	d = static_cast<double>(i);
 
 	//check for char overflow, then for printability
-	if (i > std::numeric_limits<char>::max() || i < std::numeric_limits<char>::min())
+	if (i > std::numeric_limits<unsigned char>::max() || i < std::numeric_limits<unsigned char>::min())
 		std::cout << "char: impossible" << std::endl;
 	else if (!isprint(static_cast<char>(i)))
 		std::cout << "char: Non displayable" << std::endl;
@@ -94,7 +94,7 @@ void	convert_float(std::string str)
 	d = static_cast<double>(f);
 
 	//check for char overflow, then for printability, but keeping in mind nanf exist for the floats
-	if (f > std::numeric_limits<char>::max() || f < std::numeric_limits<char>::min() || str == "nanf")
+	if (f > std::numeric_limits<unsigned char>::max() || f < std::numeric_limits<unsigned char>::min() || str == "nanf")
 		std::cout << "char: impossible" << std::endl;
 	else if (!isprint(static_cast<char>(f)))
 		std::cout << "char: Non displayable" << std::endl;
@@ -137,7 +137,7 @@ void	convert_double(std::string str)
 	f = static_cast<float>(d);
 
 	//check for char overflow, then for printability, but keeping in mind nan exist for the doubles
-	if (d > std::numeric_limits<char>::max() || d < std::numeric_limits<char>::min() || str == "nan")
+	if (d > std::numeric_limits<unsigned char>::max() || d < std::numeric_limits<unsigned char>::min() || str == "nan")
 		std::cout << "char: impossible" << std::endl;
 	else if (!isprint(static_cast<char>(d)))
 		std::cout << "char: Non displayable" << std::endl;
