@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:29:22 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 17:33:46 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/13 09:14:27 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	convert_double(std::string str);
 
 //=== Utils ===
 
-bool	is_scientific(double d);
+bool	hasnt_dot(double d);
 bool	is_pseudo_literal_float(std::string str);
 bool	is_pseudo_literal_double(std::string str);
 

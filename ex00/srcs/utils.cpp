@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:29:24 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/12 17:55:55 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/13 09:15:21 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 
 //This function is used to check floats/doubles scientific writing, using double because double is bigger.
-bool	is_scientific(double d)
+bool	hasnt_dot(double d)
 {
 	std::ostringstream strstream;
 	strstream << d;
@@ -27,8 +27,8 @@ bool	is_scientific(double d)
 	if (d != d || d == std::numeric_limits<float>::infinity() || d == -std::numeric_limits<float>::infinity())
 		return (true);
 	
-	//checking for powers
-	return (str.find(".") == std::string::npos && str.find("e") != std::string::npos);
+	//checking for powers and dot
+	return (str.find(".") != std::string::npos || str.find("e") != std::string::npos);
 }
 
 bool	is_pseudo_literal_float(std::string str)
