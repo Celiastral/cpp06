@@ -6,7 +6,7 @@
 /*   By: eandre <eandre@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:33:12 by eandre            #+#    #+#             */
-/*   Updated: 2024/11/13 09:19:24 by eandre           ###   ########.fr       */
+/*   Updated: 2024/11/13 09:21:35 by eandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,53 +21,53 @@ int	main(int argc, char **argv)
 		std::cout << "\033[0;32m#### ARG TESTS ####\033[0m" << std::endl;
 		ScalarConverter::convert(argv[1]);
 	}
+	else
+	{
+		std::cout << std::endl << "\033[0;32m#### REGULAR CHAR ####\033[0m" << std::endl;
+		ScalarConverter::convert("o");
 
 
-	std::cout << std::endl << "\033[0;32m#### REGULAR CHAR ####\033[0m" << std::endl;
-	ScalarConverter::convert("o");
+		std::cout << std::endl << "\033[0;32m#### REGULAR INT ####\033[0m" << std::endl;
+		ScalarConverter::convert("42");
 
 
-	std::cout << std::endl << "\033[0;32m#### REGULAR INT ####\033[0m" << std::endl;
-	ScalarConverter::convert("42");
+		std::cout << std::endl << "\033[0;32m#### REGULAR FLOAT ####\033[0m" << std::endl;
+		ScalarConverter::convert("42.0f");
 
 
-	std::cout << std::endl << "\033[0;32m#### REGULAR FLOAT ####\033[0m" << std::endl;
-	ScalarConverter::convert("42.0f");
+		std::cout << std::endl << "\033[0;32m#### REGULAR DOUBLE ####\033[0m" << std::endl;
+		ScalarConverter::convert("42.0");
 
 
-	std::cout << std::endl << "\033[0;32m#### REGULAR DOUBLE ####\033[0m" << std::endl;
-	ScalarConverter::convert("42.0");
+		std::cout << std::endl << "\033[0;32m#### NAN ####\033[0m" << std::endl;
+		ScalarConverter::convert("nan");
 
 
-	std::cout << std::endl << "\033[0;32m#### NAN ####\033[0m" << std::endl;
-	ScalarConverter::convert("nan");
+		std::cout << std::endl << "\033[0;32m#### NANF ####\033[0m" << std::endl;
+		ScalarConverter::convert("nanf");
 
 
-	std::cout << std::endl << "\033[0;32m#### NANF ####\033[0m" << std::endl;
-	ScalarConverter::convert("nanf");
+		std::cout << std::endl << "\033[0;32m#### +INFF ####\033[0m" << std::endl;
+		ScalarConverter::convert("+inff");
 
 
-	std::cout << std::endl << "\033[0;32m#### +INFF ####\033[0m" << std::endl;
-	ScalarConverter::convert("+inff");
+		std::cout << std::endl << "\033[0;32m#### -INFF ####\033[0m" << std::endl;
+		ScalarConverter::convert("-inff");
 
 
-	std::cout << std::endl << "\033[0;32m#### -INFF ####\033[0m" << std::endl;
-	ScalarConverter::convert("-inff");
+		std::cout << std::endl << "\033[0;32m#### +INF ####\033[0m" << std::endl;
+		ScalarConverter::convert("+inf");
 
 
-	std::cout << std::endl << "\033[0;32m#### +INF ####\033[0m" << std::endl;
-	ScalarConverter::convert("+inf");
+		std::cout << std::endl << "\033[0;32m#### -INF ####\033[0m" << std::endl;
+		ScalarConverter::convert("-inf");
 
 
-	std::cout << std::endl << "\033[0;32m#### -INF ####\033[0m" << std::endl;
-	ScalarConverter::convert("-inf");
+		std::cout << std::endl << "\033[0;32m#### NON EXISTING ####\033[0m" << std::endl;
+		ScalarConverter::convert("aaaaaaaaa");
 
 
-	std::cout << std::endl << "\033[0;32m#### NON EXISTING ####\033[0m" << std::endl;
-	ScalarConverter::convert("aaaaaaaaa");
-
-
-	std::cout << std::endl << "\033[0;32m#### NON EXISTING (dot version) ####\033[0m" << std::endl;
-	ScalarConverter::convert("1.");
-
+		std::cout << std::endl << "\033[0;32m#### NON EXISTING (dot version) ####\033[0m" << std::endl;
+		ScalarConverter::convert("1.");
+	}
 }
